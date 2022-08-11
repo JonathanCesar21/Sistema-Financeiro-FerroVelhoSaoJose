@@ -91,6 +91,7 @@
             this.mtbVencimentoReceber.Name = "mtbVencimentoReceber";
             this.mtbVencimentoReceber.Size = new System.Drawing.Size(67, 23);
             this.mtbVencimentoReceber.TabIndex = 5;
+            this.mtbVencimentoReceber.Click += new System.EventHandler(this.MaskedTextBoxSetFocus);
             // 
             // mtbVencimentoPagar
             // 
@@ -99,6 +100,7 @@
             this.mtbVencimentoPagar.Name = "mtbVencimentoPagar";
             this.mtbVencimentoPagar.Size = new System.Drawing.Size(67, 23);
             this.mtbVencimentoPagar.TabIndex = 7;
+            this.mtbVencimentoPagar.Click += new System.EventHandler(this.MaskedTextBoxSetFocus);
             // 
             // btnPesquisarPagar
             // 
@@ -125,6 +127,8 @@
             this.Name = "ReceberPagar";
             this.Text = "ReceberPagar";
             this.Load += new System.EventHandler(this.ReceberPagar_Load);
+            this.LocationChanged += new System.EventHandler(this.ReceberPagar_LocationChanged);
+            this.Click += new System.EventHandler(this.ReceberPagar_LocationChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPagar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReceber)).EndInit();
             this.ResumeLayout(false);

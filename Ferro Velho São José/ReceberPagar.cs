@@ -115,6 +115,21 @@ namespace Ferro_Velho_São_José
             dtPagar.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", "Vencimento", mtbVencimentoPagar.Text);
             dtgvPagar.DataSource = dtPagar;
         }
+        private void MaskedTextBoxSetFocus(object sender, EventArgs e)
+        {
+            var mtb = (MaskedTextBox)sender;
+            mtb.Focus();
+        }
 
+        private void ComboBoxSetFocus(object sender, EventArgs e)
+        {
+            var cb = (ComboBox)sender;
+            cb.Focus();
+        }
+
+        private void ReceberPagar_LocationChanged(object sender, EventArgs e)
+        {
+            this.BringToFront();
+        }
     }
 }

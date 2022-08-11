@@ -25,6 +25,7 @@ namespace Ferro_Velho_São_José
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
 
         }
 
@@ -131,6 +132,54 @@ namespace Ferro_Velho_São_José
         private void label22_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mtbDataMov_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbDataMov.Select(0, 0);
+            });
+        }
+
+        private void cbContas_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                cbContas.Select(0, 0);
+            });
+        }
+
+        private void cbPlano_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                cbPlano.Select(0, 0);
+            });
+        }
+
+        private void cbCustos_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                cbCustos.Select(0, 0);
+            });
+        }
+        private void MaskedTextBoxSetFocus(object sender, EventArgs e)
+        {
+            var mtb = (MaskedTextBox)sender;
+            mtb.Focus();
+        }
+
+        private void ComboBoxSetFocus(object sender, EventArgs e)
+        {
+            var cb = (ComboBox)sender;
+            cb.Focus();
+        }
+
+        private void Lancamento_LocationChanged(object sender, EventArgs e)
+        {
+            this.BringToFront();
         }
     }
 }

@@ -129,5 +129,21 @@ namespace Ferro_Velho_São_José
         {
             lblData.Text = DateTime.Now.ToString();
         }
+        private void MaskedTextBoxSetFocus(object sender, EventArgs e)
+        {
+            var mtb = (MaskedTextBox)sender;
+            mtb.Focus();
+        }
+
+        private void ComboBoxSetFocus(object sender, EventArgs e)
+        {
+            var cb = (ComboBox)sender;
+            cb.Focus();
+        }
+
+        private void Receber_LocationChanged(object sender, EventArgs e)
+        {
+            this.BringToFront();
+        }
     }
 }
