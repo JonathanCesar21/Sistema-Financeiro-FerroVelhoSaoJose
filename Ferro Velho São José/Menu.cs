@@ -18,44 +18,12 @@ namespace Ferro_Velho_São_José
             InitializeComponent();
         }
 
-        private void FormShow(Form frm)
-        {
-            
-            frmAtivo = frm;
-            frm.TopLevel = false;
-            panelForm.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
-
         private void MaskedTextBoxSetFocus(object sender, EventArgs e)
         {
             var mtb = (MaskedTextBox)sender;
             mtb.Focus();
-        }
-
-        private void ActiveFormClose()
-        {
-            
-        }
-        
-        private void ActiveButton(Button frmAtivo)
-        {
-            foreach(Control ctrl in panelPrincipal.Controls)
-            {
-                ctrl.ForeColor = Color.White;
-            }
-
-            frmAtivo.ForeColor = Color.Black;
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            //
-            //ActiveFormClose();
-
-        }
-
+        } 
+   
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -63,15 +31,20 @@ namespace Ferro_Velho_São_José
 
         private void btnContasReceberCadastro_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnContasReceberCadastro);
-            FormShow(new Receber());
+            Receber child = new Receber();
+            child.MdiParent = Menu.ActiveForm;
+            child.Show();
+
+            //ActiveButton(btnContasReceberCadastro);
+            //FormShow(new Receber());
 
         }
 
         private void btnContasPagarCadastro_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnContasPagarCadastro);
-            FormShow(new Lancamento());
+            Lancamento child = new Lancamento();
+            child.MdiParent = Menu.ActiveForm;
+            child.Show();
         }
 
         private void panelForm_Click(object sender, EventArgs e)
@@ -81,16 +54,24 @@ namespace Ferro_Velho_São_José
 
         private void btnReceberPagar_Click(object sender, EventArgs e)
         {
-            ActiveButton(btnReceberPagar);
-            FormShow(new ReceberPagar());
+            ReceberPagar child = new ReceberPagar();
+            child.MdiParent = Menu.ActiveForm;
+            child.Show();
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            int w = Screen.PrimaryScreen.Bounds.Width;
-            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width - 20;
+            int h = Screen.PrimaryScreen.Bounds.Height - 50;
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
+        }
+
+        private void contasAPagarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lancamento child = new Lancamento();
+            child.MdiParent = Menu.ActiveForm;
+            child.Show();
         }
     }
 }

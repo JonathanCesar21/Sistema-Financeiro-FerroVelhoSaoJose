@@ -327,7 +327,6 @@
             this.mtbDataMov.Size = new System.Drawing.Size(74, 23);
             this.mtbDataMov.TabIndex = 19;
             this.mtbDataMov.ValidatingType = typeof(System.DateTime);
-            this.mtbDataMov.Click += new System.EventHandler(this.MaskedTextBoxSetFocus);
             this.mtbDataMov.Enter += new System.EventHandler(this.mtbDataMov_Enter);
             // 
             // label15
@@ -354,7 +353,7 @@
             this.mtbVencimento.Size = new System.Drawing.Size(67, 23);
             this.mtbVencimento.TabIndex = 22;
             this.mtbVencimento.ValidatingType = typeof(System.DateTime);
-            this.mtbVencimento.Click += new System.EventHandler(this.MaskedTextBoxSetFocus);
+            this.mtbVencimento.Enter += new System.EventHandler(this.mtbVencimento_Enter);
             // 
             // label16
             // 
@@ -459,7 +458,7 @@
             this.cbContas.Name = "cbContas";
             this.cbContas.Size = new System.Drawing.Size(173, 23);
             this.cbContas.TabIndex = 36;
-            this.cbContas.Click += new System.EventHandler(this.ComboBoxSetFocus);
+
             this.cbContas.Enter += new System.EventHandler(this.cbContas_Enter);
             // 
             // cbPlano
@@ -469,7 +468,7 @@
             this.cbPlano.Name = "cbPlano";
             this.cbPlano.Size = new System.Drawing.Size(251, 23);
             this.cbPlano.TabIndex = 37;
-            this.cbPlano.Click += new System.EventHandler(this.ComboBoxSetFocus);
+    
             this.cbPlano.Enter += new System.EventHandler(this.cbPlano_Enter);
             // 
             // cbCustos
@@ -479,7 +478,7 @@
             this.cbCustos.Name = "cbCustos";
             this.cbCustos.Size = new System.Drawing.Size(251, 23);
             this.cbCustos.TabIndex = 38;
-            this.cbCustos.Click += new System.EventHandler(this.ComboBoxSetFocus);
+       
             this.cbCustos.Enter += new System.EventHandler(this.cbCustos_Enter);
             // 
             // txtCodFornecedor
@@ -560,13 +559,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Lancamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FVSJ - Lançamento de Títulos a Pagar";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.LocationChanged += new System.EventHandler(this.Lancamento_LocationChanged);
-            this.Click += new System.EventHandler(this.Lancamento_LocationChanged);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

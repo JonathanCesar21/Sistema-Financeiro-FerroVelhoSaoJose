@@ -165,21 +165,13 @@ namespace Ferro_Velho_São_José
                 cbCustos.Select(0, 0);
             });
         }
-        private void MaskedTextBoxSetFocus(object sender, EventArgs e)
-        {
-            var mtb = (MaskedTextBox)sender;
-            mtb.Focus();
-        }
 
-        private void ComboBoxSetFocus(object sender, EventArgs e)
+        private void mtbVencimento_Enter(object sender, EventArgs e)
         {
-            var cb = (ComboBox)sender;
-            cb.Focus();
-        }
-
-        private void Lancamento_LocationChanged(object sender, EventArgs e)
-        {
-            this.BringToFront();
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbVencimento.Select(0, 0);
+            });
         }
     }
 }

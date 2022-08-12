@@ -339,7 +339,6 @@
             this.Name = "Receber";
             this.Text = "Receber";
             this.Load += new System.EventHandler(this.Receber_Load);
-            this.LocationChanged += new System.EventHandler(this.Receber_LocationChanged);
             this.Click += new System.EventHandler(this.Receber_LocationChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReceber)).EndInit();
             this.ResumeLayout(false);

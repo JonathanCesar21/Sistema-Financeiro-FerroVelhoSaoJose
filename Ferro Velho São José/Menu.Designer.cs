@@ -34,22 +34,29 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnContasReceberCadastro = new System.Windows.Forms.Button();
-            this.panelForm = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financeiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAPagarPagasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAPagarCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAPagarBaixarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAPagarExcluidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberRecebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAPagarReceberHojeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrincipal.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPrincipal.BackColor = System.Drawing.Color.Orange;
             this.panelPrincipal.Controls.Add(this.btnReceberPagar);
             this.panelPrincipal.Controls.Add(this.btnContasPagarCadastro);
             this.panelPrincipal.Controls.Add(this.panel2);
             this.panelPrincipal.Controls.Add(this.btnContasReceberCadastro);
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(165, 461);
@@ -116,34 +123,93 @@
             this.btnContasReceberCadastro.UseVisualStyleBackColor = true;
             this.btnContasReceberCadastro.Click += new System.EventHandler(this.btnContasReceberCadastro_Click);
             // 
-            // panelForm
+            // menuStrip1
             // 
-            this.panelForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelForm.AutoScroll = true;
-            this.panelForm.Location = new System.Drawing.Point(164, 0);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(818, 490);
-            this.panelForm.TabIndex = 1;
-            this.panelForm.Click += new System.EventHandler(this.panelForm_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrosToolStripMenuItem,
+            this.financeiroToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(165, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(819, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // financeiroToolStripMenuItem
+            // 
+            this.financeiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contasAPagarPagasToolStripMenuItem,
+            this.contasAReceberRecebidasToolStripMenuItem,
+            this.contasAPagarReceberHojeToolStripMenuItem});
+            this.financeiroToolStripMenuItem.Name = "financeiroToolStripMenuItem";
+            this.financeiroToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.financeiroToolStripMenuItem.Text = "Financeiro";
+            // 
+            // contasAPagarPagasToolStripMenuItem
+            // 
+            this.contasAPagarPagasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contasAPagarCadastroToolStripMenuItem,
+            this.contasAPagarBaixarToolStripMenuItem,
+            this.contasAPagarExcluidasToolStripMenuItem});
+            this.contasAPagarPagasToolStripMenuItem.Name = "contasAPagarPagasToolStripMenuItem";
+            this.contasAPagarPagasToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.contasAPagarPagasToolStripMenuItem.Text = "Contas a Pagar/Pagas";
+            // 
+            // contasAPagarCadastroToolStripMenuItem
+            // 
+            this.contasAPagarCadastroToolStripMenuItem.Name = "contasAPagarCadastroToolStripMenuItem";
+            this.contasAPagarCadastroToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.contasAPagarCadastroToolStripMenuItem.Text = "Contas a Pagar - Cadastro";
+            this.contasAPagarCadastroToolStripMenuItem.Click += new System.EventHandler(this.contasAPagarCadastroToolStripMenuItem_Click);
+            // 
+            // contasAPagarBaixarToolStripMenuItem
+            // 
+            this.contasAPagarBaixarToolStripMenuItem.Name = "contasAPagarBaixarToolStripMenuItem";
+            this.contasAPagarBaixarToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.contasAPagarBaixarToolStripMenuItem.Text = "Contas a Pagar - Baixar";
+            // 
+            // contasAPagarExcluidasToolStripMenuItem
+            // 
+            this.contasAPagarExcluidasToolStripMenuItem.Name = "contasAPagarExcluidasToolStripMenuItem";
+            this.contasAPagarExcluidasToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.contasAPagarExcluidasToolStripMenuItem.Text = "Contas a Pagar - Excluidas";
+            // 
+            // contasAReceberRecebidasToolStripMenuItem
+            // 
+            this.contasAReceberRecebidasToolStripMenuItem.Name = "contasAReceberRecebidasToolStripMenuItem";
+            this.contasAReceberRecebidasToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.contasAReceberRecebidasToolStripMenuItem.Text = "Contas a Receber/Recebidas";
+            // 
+            // contasAPagarReceberHojeToolStripMenuItem
+            // 
+            this.contasAPagarReceberHojeToolStripMenuItem.Name = "contasAPagarReceberHojeToolStripMenuItem";
+            this.contasAPagarReceberHojeToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.contasAPagarReceberHojeToolStripMenuItem.Text = "Contas a Pagar/Receber - Hoje";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.panelForm);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelPrincipal);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelPrincipal.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -155,6 +221,14 @@
         private Button btnContasReceberCadastro;
         private Button btnReceberPagar;
         private Button btnContasPagarCadastro;
-        private Panel panelForm;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem cadastrosToolStripMenuItem;
+        private ToolStripMenuItem financeiroToolStripMenuItem;
+        private ToolStripMenuItem contasAPagarPagasToolStripMenuItem;
+        private ToolStripMenuItem contasAPagarCadastroToolStripMenuItem;
+        private ToolStripMenuItem contasAPagarBaixarToolStripMenuItem;
+        private ToolStripMenuItem contasAPagarExcluidasToolStripMenuItem;
+        private ToolStripMenuItem contasAReceberRecebidasToolStripMenuItem;
+        private ToolStripMenuItem contasAPagarReceberHojeToolStripMenuItem;
     }
 }
