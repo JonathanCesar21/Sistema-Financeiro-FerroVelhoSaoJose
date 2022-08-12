@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceberPagar));
             this.dtgvPagar = new System.Windows.Forms.DataGridView();
             this.dtgvReceber = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblData = new System.Windows.Forms.Label();
-            this.btnPesquisarReceber = new System.Windows.Forms.Button();
-            this.mtbVencimentoReceber = new System.Windows.Forms.MaskedTextBox();
-            this.mtbVencimentoPagar = new System.Windows.Forms.MaskedTextBox();
-            this.btnPesquisarPagar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.notifyReceber = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyPagar = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReceber)).BeginInit();
             this.SuspendLayout();
@@ -74,53 +75,47 @@
             this.lblData.TabIndex = 3;
             this.lblData.Text = ".";
             // 
-            // btnPesquisarReceber
+            // label1
             // 
-            this.btnPesquisarReceber.Location = new System.Drawing.Point(85, 36);
-            this.btnPesquisarReceber.Name = "btnPesquisarReceber";
-            this.btnPesquisarReceber.Size = new System.Drawing.Size(63, 23);
-            this.btnPesquisarReceber.TabIndex = 4;
-            this.btnPesquisarReceber.Text = "Pesquisar";
-            this.btnPesquisarReceber.UseVisualStyleBackColor = true;
-            this.btnPesquisarReceber.Click += new System.EventHandler(this.btnPesquisarReceber_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(260, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Contas a Receber Hoje";
             // 
-            // mtbVencimentoReceber
+            // label2
             // 
-            this.mtbVencimentoReceber.Location = new System.Drawing.Point(12, 37);
-            this.mtbVencimentoReceber.Mask = "00/00/0000";
-            this.mtbVencimentoReceber.Name = "mtbVencimentoReceber";
-            this.mtbVencimentoReceber.Size = new System.Drawing.Size(67, 23);
-            this.mtbVencimentoReceber.TabIndex = 5;
-            this.mtbVencimentoReceber.Click += new System.EventHandler(this.MaskedTextBoxSetFocus);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(277, 309);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(247, 30);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Contas a Pagar Hoje";
             // 
-            // mtbVencimentoPagar
+            // notifyReceber
             // 
-            this.mtbVencimentoPagar.Location = new System.Drawing.Point(12, 323);
-            this.mtbVencimentoPagar.Mask = "00/00/0000";
-            this.mtbVencimentoPagar.Name = "mtbVencimentoPagar";
-            this.mtbVencimentoPagar.Size = new System.Drawing.Size(67, 23);
-            this.mtbVencimentoPagar.TabIndex = 7;
-            this.mtbVencimentoPagar.Click += new System.EventHandler(this.MaskedTextBoxSetFocus);
+            this.notifyReceber.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyReceber.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyReceber.Icon")));
+            this.notifyReceber.Text = "Contas a Receber Hoje";
+            this.notifyReceber.Visible = true;
             // 
-            // btnPesquisarPagar
+            // notifyPagar
             // 
-            this.btnPesquisarPagar.Location = new System.Drawing.Point(85, 322);
-            this.btnPesquisarPagar.Name = "btnPesquisarPagar";
-            this.btnPesquisarPagar.Size = new System.Drawing.Size(63, 23);
-            this.btnPesquisarPagar.TabIndex = 6;
-            this.btnPesquisarPagar.Text = "Pesquisar";
-            this.btnPesquisarPagar.UseVisualStyleBackColor = true;
-            this.btnPesquisarPagar.Click += new System.EventHandler(this.btnPesquisarPagar_Click);
+            this.notifyPagar.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyPagar.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyPagar.Icon")));
+            this.notifyPagar.Text = "Contas a Pagar Hoje";
+            this.notifyPagar.Visible = true;
             // 
             // ReceberPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 568);
-            this.Controls.Add(this.mtbVencimentoPagar);
-            this.Controls.Add(this.btnPesquisarPagar);
-            this.Controls.Add(this.mtbVencimentoReceber);
-            this.Controls.Add(this.btnPesquisarReceber);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.dtgvReceber);
             this.Controls.Add(this.dtgvPagar);
@@ -145,5 +140,9 @@
         private MaskedTextBox mtbVencimentoReceber;
         private MaskedTextBox mtbVencimentoPagar;
         private Button btnPesquisarPagar;
+        private Label label1;
+        private Label label2;
+        private NotifyIcon notifyReceber;
+        private NotifyIcon notifyPagar;
     }
 }

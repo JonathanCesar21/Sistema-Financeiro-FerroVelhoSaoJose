@@ -29,11 +29,14 @@ namespace Ferro_Velho_São_José
 
         private void ReceberPagar_Load(object sender, EventArgs e)
         {
+
+            string hoje = DateTime.Now.ToShortDateString();
+
             try
             {
                 conexao = new SqlConnection(@"Server=DESKTOP-1HS5HBK\SQLEXPRESS;Database=ferrovelho;Trusted_Connection=True;");
 
-                strSQL = "select Vencimento,Nome_cli, Valor, N_parcela, T_parcelas, N_boleto, Obs from receber_tb";
+                strSQL = "SELECT Vencimento,Nome_cli, Valor, N_parcela, T_parcelas, N_boleto, Obs FROM receber_tb WHERE vencimento ='"+hoje+"'";
 
                 DataSet ds = new DataSet();
 
@@ -45,6 +48,18 @@ namespace Ferro_Velho_São_José
 
                 dtgvReceber.DataSource = ds.Tables[0];
                 dtReceber = ds.Tables[0];
+
+                SqlDataAdapter dpr = new SqlDataAdapter(strSQL, conexao);
+                DataTable dtr = new DataTable();
+                dpr.Fill(dtr);
+
+                if (dtr.Rows.Count > 0)
+                {
+                    NotificarBalaoReceber();
+                }
+                
+
+
             }
             catch (Exception ex)
             {
@@ -61,7 +76,7 @@ namespace Ferro_Velho_São_José
             {
                 conexao = new SqlConnection(@"Server=DESKTOP-1HS5HBK\SQLEXPRESS;Database=ferrovelho;Trusted_Connection=True;");
 
-                strSQL = "select Vencimento, Nome_frn, Valor, N_parcela, T_parcelas, N_boleto, Obs from lancamentos_tb";
+                strSQL = "select Vencimento, Nome_frn, Valor, N_parcela, T_parcelas, N_boleto, Obs from lancamentos_tb WHERE vencimento ='" + hoje + "'";
 
                 DataSet ds = new DataSet();
 
@@ -74,6 +89,15 @@ namespace Ferro_Velho_São_José
                 dtgvPagar.DataSource = ds.Tables[0];
                 dtPagar = ds.Tables[0];
 
+                SqlDataAdapter dpp = new SqlDataAdapter(strSQL, conexao);
+                DataTable dtp = new DataTable();
+                dpp.Fill(dtp);
+
+                if (dtp.Rows.Count > 0)
+                {
+                    NotificarBalaoPagar();
+                }
+              
             }
             catch (Exception ex)
             {
@@ -85,6 +109,16 @@ namespace Ferro_Velho_São_José
                 conexao = null;
                 comando = null;
             }
+        }
+
+        private void NotificarBalaoPagar()
+        {
+            notifyReceber.ShowBalloonTip(999999999, "Sistema gestão", "Contas a Receber Hoje!!!", ToolTipIcon.Info);
+        }
+
+        private void NotificarBalaoReceber()
+        {
+            notifyPagar.ShowBalloonTip(999999999, "Sistema gestão", "Contas a Pagar Hoje!!!", ToolTipIcon.Warning);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

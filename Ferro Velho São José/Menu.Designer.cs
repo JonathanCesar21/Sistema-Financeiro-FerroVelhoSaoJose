@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.btnReceberPagar = new System.Windows.Forms.Button();
             this.btnContasPagarCadastro = new System.Windows.Forms.Button();
@@ -42,7 +44,12 @@
             this.contasAPagarBaixarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAPagarExcluidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAReceberRecebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberBaixarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberExcluidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAPagarReceberHojeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyPagar = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyReceber = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelPrincipal.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -181,15 +188,53 @@
             // 
             // contasAReceberRecebidasToolStripMenuItem
             // 
+            this.contasAReceberRecebidasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contasAReceberCadastroToolStripMenuItem,
+            this.contasAReceberBaixarToolStripMenuItem,
+            this.contasAReceberExcluidasToolStripMenuItem});
             this.contasAReceberRecebidasToolStripMenuItem.Name = "contasAReceberRecebidasToolStripMenuItem";
             this.contasAReceberRecebidasToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.contasAReceberRecebidasToolStripMenuItem.Text = "Contas a Receber/Recebidas";
+            // 
+            // contasAReceberCadastroToolStripMenuItem
+            // 
+            this.contasAReceberCadastroToolStripMenuItem.Name = "contasAReceberCadastroToolStripMenuItem";
+            this.contasAReceberCadastroToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.contasAReceberCadastroToolStripMenuItem.Text = "Contas a Receber - Cadastro";
+            this.contasAReceberCadastroToolStripMenuItem.Click += new System.EventHandler(this.contasAReceberCadastroToolStripMenuItem_Click);
+            // 
+            // contasAReceberBaixarToolStripMenuItem
+            // 
+            this.contasAReceberBaixarToolStripMenuItem.Name = "contasAReceberBaixarToolStripMenuItem";
+            this.contasAReceberBaixarToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.contasAReceberBaixarToolStripMenuItem.Text = "Contas a Receber - Baixar";
+            // 
+            // contasAReceberExcluidasToolStripMenuItem
+            // 
+            this.contasAReceberExcluidasToolStripMenuItem.Name = "contasAReceberExcluidasToolStripMenuItem";
+            this.contasAReceberExcluidasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.contasAReceberExcluidasToolStripMenuItem.Text = "Contas a Receber - Excluidas";
             // 
             // contasAPagarReceberHojeToolStripMenuItem
             // 
             this.contasAPagarReceberHojeToolStripMenuItem.Name = "contasAPagarReceberHojeToolStripMenuItem";
             this.contasAPagarReceberHojeToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.contasAPagarReceberHojeToolStripMenuItem.Text = "Contas a Pagar/Receber - Hoje";
+            this.contasAPagarReceberHojeToolStripMenuItem.Click += new System.EventHandler(this.contasAPagarReceberHojeToolStripMenuItem_Click);
+            // 
+            // notifyPagar
+            // 
+            this.notifyPagar.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyPagar.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyPagar.Icon")));
+            this.notifyPagar.Text = "Contas a Pagar Hoje";
+            this.notifyPagar.Visible = true;
+            // 
+            // notifyReceber
+            // 
+            this.notifyReceber.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyReceber.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyReceber.Icon")));
+            this.notifyReceber.Text = "Contas a Pagar Hoje";
+            this.notifyReceber.Visible = true;
             // 
             // Menu
             // 
@@ -230,5 +275,10 @@
         private ToolStripMenuItem contasAPagarExcluidasToolStripMenuItem;
         private ToolStripMenuItem contasAReceberRecebidasToolStripMenuItem;
         private ToolStripMenuItem contasAPagarReceberHojeToolStripMenuItem;
+        private ToolStripMenuItem contasAReceberCadastroToolStripMenuItem;
+        private ToolStripMenuItem contasAReceberBaixarToolStripMenuItem;
+        private ToolStripMenuItem contasAReceberExcluidasToolStripMenuItem;
+        private NotifyIcon notifyPagar;
+        private NotifyIcon notifyReceber;
     }
 }
