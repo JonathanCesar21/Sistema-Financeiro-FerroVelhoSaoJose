@@ -53,7 +53,7 @@ namespace Ferro_Velho_São_José
 
         private void btnContasPagarCadastro_Click(object sender, EventArgs e)
         {
-            Lancamento child = new Lancamento();
+            Pagar child = new Pagar();
             child.MdiParent = Menu.ActiveForm;
             child.Show();
         }
@@ -165,7 +165,7 @@ namespace Ferro_Velho_São_José
 
         private void contasAPagarCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Lancamento child = new Lancamento();
+            Pagar child = new Pagar();
             child.MdiParent = Menu.ActiveForm;
             child.Show();
         }
@@ -180,6 +180,18 @@ namespace Ferro_Velho_São_José
         private void contasAPagarReceberHojeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReceberPagar child = new ReceberPagar();
+            child.MdiParent = Menu.ActiveForm;
+            child.Show();
+        }
+
+        private void cadastroDeFormasDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastroDeFornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroFornecedor child = new CadastroFornecedor();
             child.MdiParent = Menu.ActiveForm;
             child.Show();
         }

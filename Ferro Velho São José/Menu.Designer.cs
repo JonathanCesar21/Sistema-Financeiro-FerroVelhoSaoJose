@@ -50,6 +50,13 @@
             this.contasAPagarReceberHojeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyPagar = new System.Windows.Forms.NotifyIcon(this.components);
             this.notifyReceber = new System.Windows.Forms.NotifyIcon(this.components);
+            this.pessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financeiroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeFornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeFormasDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeCentrosDeCustoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeGruposCentrrosDeCustoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPrincipal.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +73,7 @@
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(165, 461);
+            this.panelPrincipal.Size = new System.Drawing.Size(125, 461);
             this.panelPrincipal.TabIndex = 0;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -78,7 +85,7 @@
             this.btnReceberPagar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReceberPagar.Location = new System.Drawing.Point(0, 215);
             this.btnReceberPagar.Name = "btnReceberPagar";
-            this.btnReceberPagar.Size = new System.Drawing.Size(160, 40);
+            this.btnReceberPagar.Size = new System.Drawing.Size(125, 41);
             this.btnReceberPagar.TabIndex = 3;
             this.btnReceberPagar.Text = "Receber/Pagar";
             this.btnReceberPagar.UseVisualStyleBackColor = true;
@@ -92,7 +99,7 @@
             this.btnContasPagarCadastro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnContasPagarCadastro.Location = new System.Drawing.Point(0, 169);
             this.btnContasPagarCadastro.Name = "btnContasPagarCadastro";
-            this.btnContasPagarCadastro.Size = new System.Drawing.Size(160, 40);
+            this.btnContasPagarCadastro.Size = new System.Drawing.Size(125, 40);
             this.btnContasPagarCadastro.TabIndex = 2;
             this.btnContasPagarCadastro.Text = "Contas a Pagar";
             this.btnContasPagarCadastro.UseVisualStyleBackColor = true;
@@ -109,9 +116,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Ferro_Velho_São_José.Properties.Resources.logo_preta;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 87);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -124,7 +131,7 @@
             this.btnContasReceberCadastro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnContasReceberCadastro.Location = new System.Drawing.Point(0, 123);
             this.btnContasReceberCadastro.Name = "btnContasReceberCadastro";
-            this.btnContasReceberCadastro.Size = new System.Drawing.Size(160, 40);
+            this.btnContasReceberCadastro.Size = new System.Drawing.Size(125, 40);
             this.btnContasReceberCadastro.TabIndex = 1;
             this.btnContasReceberCadastro.Text = "Contas a Receber";
             this.btnContasReceberCadastro.UseVisualStyleBackColor = true;
@@ -135,14 +142,17 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem,
             this.financeiroToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(165, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(125, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(819, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(859, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cadastrosToolStripMenuItem
             // 
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pessoasToolStripMenuItem,
+            this.financeiroToolStripMenuItem1});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -236,6 +246,57 @@
             this.notifyReceber.Text = "Contas a Pagar Hoje";
             this.notifyReceber.Visible = true;
             // 
+            // pessoasToolStripMenuItem
+            // 
+            this.pessoasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDeClientesToolStripMenuItem,
+            this.cadastroDeFornecedoresToolStripMenuItem});
+            this.pessoasToolStripMenuItem.Name = "pessoasToolStripMenuItem";
+            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pessoasToolStripMenuItem.Text = "Pessoas";
+            // 
+            // financeiroToolStripMenuItem1
+            // 
+            this.financeiroToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDeFormasDePagamentoToolStripMenuItem,
+            this.cadastroDeCentrosDeCustoToolStripMenuItem,
+            this.cadastroDeGruposCentrrosDeCustoToolStripMenuItem});
+            this.financeiroToolStripMenuItem1.Name = "financeiroToolStripMenuItem1";
+            this.financeiroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.financeiroToolStripMenuItem1.Text = "Financeiro";
+            // 
+            // cadastroDeClientesToolStripMenuItem
+            // 
+            this.cadastroDeClientesToolStripMenuItem.Name = "cadastroDeClientesToolStripMenuItem";
+            this.cadastroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.cadastroDeClientesToolStripMenuItem.Text = "Cadastro de Clientes";
+            // 
+            // cadastroDeFornecedoresToolStripMenuItem
+            // 
+            this.cadastroDeFornecedoresToolStripMenuItem.Name = "cadastroDeFornecedoresToolStripMenuItem";
+            this.cadastroDeFornecedoresToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.cadastroDeFornecedoresToolStripMenuItem.Text = "Cadastro de Fornecedores";
+            this.cadastroDeFornecedoresToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeFornecedoresToolStripMenuItem_Click);
+            // 
+            // cadastroDeFormasDePagamentoToolStripMenuItem
+            // 
+            this.cadastroDeFormasDePagamentoToolStripMenuItem.Name = "cadastroDeFormasDePagamentoToolStripMenuItem";
+            this.cadastroDeFormasDePagamentoToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.cadastroDeFormasDePagamentoToolStripMenuItem.Text = "Cadastro de Formas de Pagamento";
+            this.cadastroDeFormasDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeFormasDePagamentoToolStripMenuItem_Click);
+            // 
+            // cadastroDeCentrosDeCustoToolStripMenuItem
+            // 
+            this.cadastroDeCentrosDeCustoToolStripMenuItem.Name = "cadastroDeCentrosDeCustoToolStripMenuItem";
+            this.cadastroDeCentrosDeCustoToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.cadastroDeCentrosDeCustoToolStripMenuItem.Text = "Cadastro de Centros de Custo";
+            // 
+            // cadastroDeGruposCentrrosDeCustoToolStripMenuItem
+            // 
+            this.cadastroDeGruposCentrrosDeCustoToolStripMenuItem.Name = "cadastroDeGruposCentrrosDeCustoToolStripMenuItem";
+            this.cadastroDeGruposCentrrosDeCustoToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.cadastroDeGruposCentrrosDeCustoToolStripMenuItem.Text = "Cadastro de Grupos Centrros de Custo";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -280,5 +341,12 @@
         private ToolStripMenuItem contasAReceberExcluidasToolStripMenuItem;
         private NotifyIcon notifyPagar;
         private NotifyIcon notifyReceber;
+        private ToolStripMenuItem pessoasToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeClientesToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeFornecedoresToolStripMenuItem;
+        private ToolStripMenuItem financeiroToolStripMenuItem1;
+        private ToolStripMenuItem cadastroDeFormasDePagamentoToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeCentrosDeCustoToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeGruposCentrrosDeCustoToolStripMenuItem;
     }
 }

@@ -45,9 +45,9 @@ namespace Ferro_Velho_São_José
 
                 if(dt.Rows.Count == 1)
                 {
-                    Lancamento TelaLancamentos = new Lancamento();
+                    Menu TelaMenu = new Menu();
                     this.Hide();
-                    TelaLancamentos.Show();
+                    TelaMenu.Show();
                     conexao.Close();
                 }
                 else

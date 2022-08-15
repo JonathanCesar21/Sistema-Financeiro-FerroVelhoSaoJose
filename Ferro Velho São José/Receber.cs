@@ -63,7 +63,7 @@ namespace Ferro_Velho_São_José
 
                 comando = new SqlCommand(strSQL, conexao);
 
-                comando.Parameters.AddWithValue("@Nome_cli", txtCliente.Text);
+                comando.Parameters.AddWithValue("@Nome_cli", txtFornecedor.Text);
                 comando.Parameters.AddWithValue("@Cpf_cli", mtbCpf.Text);
                 comando.Parameters.AddWithValue("@Cnpj_cli", mtbCnpj.Text);
                 comando.Parameters.AddWithValue("@Vencimento", mtbVencimento.Text);
@@ -144,6 +144,22 @@ namespace Ferro_Velho_São_José
         private void Receber_LocationChanged(object sender, EventArgs e)
         {
             this.BringToFront();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            mtbVencimento.Text = "";
+            txtFornecedor.Text = "";
         }
     }
 }

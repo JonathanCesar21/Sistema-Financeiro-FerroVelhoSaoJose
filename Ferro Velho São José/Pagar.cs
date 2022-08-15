@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Ferro_Velho_São_José
 {
-    public partial class Lancamento : Form
+    public partial class Pagar : Form
     {
         SqlConnection conexao;
         SqlCommand comando;
@@ -13,7 +13,7 @@ namespace Ferro_Velho_São_José
 
         string strSQL;
 
-        public Lancamento()
+        public Pagar()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace Ferro_Velho_São_José
 
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnGravar_Click(object sender, EventArgs e)
         {
 
             int NParcela = Convert.ToInt32(txtNParcela.Text);
@@ -55,9 +55,9 @@ namespace Ferro_Velho_São_José
                         comando.Parameters.AddWithValue("@T_parcelas", txtTParcelas.Text);
                         comando.Parameters.AddWithValue("@Nome_frn", txtFornecedor.Text);
                         comando.Parameters.AddWithValue("@Dt_mov", mtbDataMov.Text);
-                        comando.Parameters.AddWithValue("@C_corrente", cbContas.Text);
-                        comando.Parameters.AddWithValue("@C_plano", cbPlano.Text);
-                        comando.Parameters.AddWithValue("@C_custos", cbCustos.Text);
+                        comando.Parameters.AddWithValue("@C_corrente", cbGrupoCustos.Text);
+                        comando.Parameters.AddWithValue("@C_Banco", cbBanco.Text);
+                        comando.Parameters.AddWithValue("@C_custos", cbCentroCustos.Text);
                         comando.Parameters.AddWithValue("@Vencimento", nextDate.ToShortDateString());
                         comando.Parameters.AddWithValue("@N_boleto", txtNBoleto.Text);
                         comando.Parameters.AddWithValue("@Valor", txtValor.Text);
@@ -98,10 +98,10 @@ namespace Ferro_Velho_São_José
                     comando.Parameters.AddWithValue("@T_parcelas", txtTParcelas.Text);
                     comando.Parameters.AddWithValue("@Nome_frn", txtFornecedor.Text);
                     comando.Parameters.AddWithValue("@Dt_mov", mtbDataMov.Text);
-                    comando.Parameters.AddWithValue("@C_corrente", cbContas.Text);
-                    comando.Parameters.AddWithValue("@C_plano", cbPlano.Text);
-                    comando.Parameters.AddWithValue("@C_custos", cbCustos.Text);
-                    comando.Parameters.AddWithValue("@Vencimento", mtbVencimento.Text);
+                    comando.Parameters.AddWithValue("@C_corrente", cbGrupoCustos.Text);
+                    comando.Parameters.AddWithValue("@C_Banco", cbBanco.Text);
+                    comando.Parameters.AddWithValue("@C_custos", cbCentroCustos.Text);
+                    comando.Parameters.AddWithValue("@Vencimento", nextDate.ToShortDateString());
                     comando.Parameters.AddWithValue("@N_boleto", txtNBoleto.Text);
                     comando.Parameters.AddWithValue("@Valor", txtValor.Text);
                     comando.Parameters.AddWithValue("@Obs", txtObs.Text);
@@ -142,35 +142,72 @@ namespace Ferro_Velho_São_José
             });
         }
 
-        private void cbContas_Enter(object sender, EventArgs e)
-        {
-            this.BeginInvoke((MethodInvoker)delegate ()
-            {
-                cbContas.Select(0, 0);
-            });
-        }
-
-        private void cbPlano_Enter(object sender, EventArgs e)
-        {
-            this.BeginInvoke((MethodInvoker)delegate ()
-            {
-                cbPlano.Select(0, 0);
-            });
-        }
-
-        private void cbCustos_Enter(object sender, EventArgs e)
-        {
-            this.BeginInvoke((MethodInvoker)delegate ()
-            {
-                cbCustos.Select(0, 0);
-            });
-        }
-
         private void mtbVencimento_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
             {
                 mtbVencimento.Select(0, 0);
+            });
+        }
+
+        private void rbCTodas_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtbDataMov_Click(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbDataMov.Select(0, 0);
+            });
+        }
+
+        private void mtbDataMov_Enter_1(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbDataMov.Select(0, 0);
+            });
+        }
+
+        private void mtbDataNf_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbDataNf.Select(0, 0);
+            });
+        }
+
+        private void mtbCpf_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbCpf.Select(0, 0);
+            });
+        }
+
+        private void mtbCnpj_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbCnpj.Select(0, 0);
+            });
+        }
+
+        private void mtbInicio_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbInicio.Select(0, 0);
+            });
+        }
+
+        private void mtbFim_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                mtbFim.Select(0, 0);
             });
         }
     }
